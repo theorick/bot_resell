@@ -6,7 +6,7 @@ import telebot
 
 
 
-telegram_api_key = ''
+telegram_api_key = 'API KEY'
 bot = telebot.TeleBot(telegram_api_key)
 
 url_original = 'https://www.whentocop.fr'
@@ -22,16 +22,11 @@ def run(playwright: Playwright) -> None:
     page = context.new_page()
     page.goto(url)
     while True:
-
-
         page.evaluate('window.scrollTo(0, document.body.scrollHeight)')
-
         page.wait_for_load_state('networkidle')
-
         time.sleep(3)  # wait for 3 seconds
-
+        
         # check if we've reached the end of the page
-
         if page.evaluate('document.body.scrollHeight') == page.evaluate('window.scrollY + window.innerHeight'):
             break
 
