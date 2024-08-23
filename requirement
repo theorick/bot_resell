@@ -1,0 +1,6 @@
+bs4 : pip install beautifulsoup4
+requests : pip install requests
+playwright : pip install pytest-playwright
+            playwright install
+time : pip install time
+telebot : pip install pyTelegramBotAPI
